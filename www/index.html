@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-2">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <title>Celtics</title>
+    <script type="text/javascript" src="scripts/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+</head>
+<body>
+    <!--<div id="test">Test</div>-->
+    <!-- Opening -->
+    <div data-role="page" id="open">
+        <a href="#news" id="touch_zone_start" style="text-decoration: none;">
+            <div role="main" class="ui-content">
+                <div class="celtic_font">Welcome in Boston Celtics Center</div>
+                <div id="logo"></div>
+                <div class="celtic_font blink" id="welcome">Tap to start</div>
+            </div><!-- /content -->
+        </a>
+    </div><!-- /Opening -->
+    <!-- News -->
+    <div data-role="page" id="news">
+        <div data-role="header" data-position="fixed" class="main_bar">
+            <a href="#side_menu" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon" id="hamburger">Menu</a>
+            <h1>News</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        <div id="news_container">
+        </div>
+            <div data-role="panel" id="side_menu" data-display="overlay" data-position="left">
+                <ul data-role="listview" data-icon="false">
+                    <li data-role="list-divider">News</li>
+                    <li><a href="#" data-rel="close">Latest news</a></li>
+                    <li><a href="#" data-rel="close">Photos</a></li>
+                    <li><a href="#" data-rel="close">Video</a></li>
+                    <li data-role="list-divider">Team</li>
+                    <li><a href="#">Roster</a></li>
+                    <li><a href="#">Stats</a></li>
+                    <li data-role="list-divider">Season</li>
+                    <li><a href="#">Schedule</a></li>
+                    <li><a href="#">Standings</a></li>
+                </ul>
+            </div><!-- /panel -->
+        </div><!-- /content -->
+        <div data-role="footer" data-position="fixed" class="main_bar">
+            <h4>Celtics</h4>
+        </div><!-- /footer -->
+    </div><!-- /News -->
+</body>
+</html>
