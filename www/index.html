@@ -39,14 +39,14 @@
                 <ul data-role="listview" data-icon="false">
                     <li data-role="list-divider">News</li>
                     <li><a href="#" data-rel="close">Latest news</a></li>
-                    <li><a href="#" data-rel="close">Photos</a></li>
-                    <li><a href="#" data-rel="close">Video</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                    <li><a href="#video">Video</a></li>
                     <li data-role="list-divider">Team</li>
-                    <li><a href="#">Roster</a></li>
-                    <li><a href="#">Stats</a></li>
+                    <li><a href="#roster">Roster</a></li>
+                    <li><a href="#stats">Stats</a></li>
                     <li data-role="list-divider">Season</li>
-                    <li><a href="#">Schedule</a></li>
-                    <li><a href="#">Standings</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#standings">Standings</a></li>
                 </ul>
             </div><!-- /panel -->
         </div><!-- /content -->
@@ -55,5 +55,33 @@
         </div><!-- /footer -->
     </div><!-- /News -->
     <div id="full_news_container"></div>
+    <!-- Roster -->
+    <div data-role="page" id="roster">
+        <div data-role="header" data-position="fixed" class="main_bar">
+            <a href="#side_menu_roster" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon" id="hamburger">Menu</a>
+            <h1>Roster</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="roster_container">
+            </div>
+            <div data-role="panel" id="side_menu_roster" data-display="overlay" data-position="left">
+                <ul data-role="listview" data-icon="false">
+                    <li data-role="list-divider">News</li>
+                    <li><a href="#news">Latest news</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li data-role="list-divider">Team</li>
+                    <li><a href="#" data-rel="close">Roster</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li data-role="list-divider">Season</li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#standings">Standings</a></li>
+                </ul>
+            </div><!-- /panel -->
+        </div><!-- /content -->
+        <div data-role="footer" data-position="fixed" class="main_bar">
+            <h4>Celtics</h4>
+        </div><!-- /footer -->
+    </div><!-- Roster -->
 </body>
 </html>

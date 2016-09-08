@@ -30,15 +30,15 @@ function display_News(articles) {
                 '<div data-role="panel" id="side_menu' + articles[i]['id'] + '" data-display="overlay" data-position="left">' +
                     '<ul data-role="listview" data-icon="false">' +
                         '<li data-role="list-divider">News</li>' +
-                        '<li><a href="#news" data-rel="close">Latest news</a></li>' +
-                        '<li><a href="#" data-rel="close">Photos</a></li>' +
-                        '<li><a href="#" data-rel="close">Video</a></li>' +
+                        '<li><a href="#news">Latest news</a></li>' +
+                        '<li><a href="#photos">Photos</a></li>' +
+                        '<li><a href="#video">Video</a></li>' +
                         '<li data-role="list-divider">Team</li>' +
-                        '<li><a href="#">Roster</a></li>' +
-                        '<li><a href="#">Stats</a></li>' +
+                        '<li><a href="#roster">Roster</a></li>' +
+                        '<li><a href="#stats">Stats</a></li>' +
                         '<li data-role="list-divider">Season</li>' +
-                        '<li><a href="#">Schedule</a></li>' +
-                        '<li><a href="#">Standings</a></li>' +
+                        '<li><a href="#schedule">Schedule</a></li>' +
+                        '<li><a href="#standings">Standings</a></li>' +
             '</ul>' +
                 '</div>' +
             '</div>' +
