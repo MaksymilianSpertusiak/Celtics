@@ -15,7 +15,6 @@
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
 </head>
 <body>
-    <!--<div id="test">Test</div>-->
     <!-- Opening -->
     <div data-role="page" id="open">
         <a href="#news" id="touch_zone_start" style="text-decoration: none;">
@@ -26,6 +25,7 @@
             </div><!-- /content -->
         </a>
     </div><!-- /Opening -->
+
     <!-- News -->
     <div data-role="page" id="news">
         <div data-role="header" data-position="fixed" class="main_bar">
@@ -55,6 +55,65 @@
         </div><!-- /footer -->
     </div><!-- /News -->
     <div id="full_news_container"></div>
+
+    <!-- Photos -->
+    <div data-role="page" id="photos">
+        <div data-role="header" data-position="fixed" class="main_bar">
+            <a href="#side_menu_photos" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon" id="hamburger">Menu</a>
+            <h1>Photos</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="photos_container">
+            </div>
+            <div data-role="panel" id="side_menu_photos" data-display="overlay" data-position="left">
+                <ul data-role="listview" data-icon="false">
+                    <li data-role="list-divider">News</li>
+                    <li><a href="#news">Latest news</a></li>
+                    <li><a href="#" data-rel="close">Photos</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li data-role="list-divider">Team</li>
+                    <li><a href="#roster">Roster</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li data-role="list-divider">Season</li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#standings">Standings</a></li>
+                </ul>
+            </div><!-- /panel -->
+        </div><!-- /content -->
+        <div data-role="footer" data-position="fixed" class="main_bar">
+            <h4>Celtics</h4>
+        </div><!-- /footer -->
+    </div><!-- Photos -->
+
+    <!-- Video -->
+    <div data-role="page" id="video">
+        <div data-role="header" data-position="fixed" class="main_bar">
+            <a href="#side_menu_video" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon" id="hamburger">Menu</a>
+            <h1>Video</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div id="video_container">
+            </div>
+            <div data-role="panel" id="side_menu_video" data-display="overlay" data-position="left">
+                <ul data-role="listview" data-icon="false">
+                    <li data-role="list-divider">News</li>
+                    <li><a href="#news">Latest news</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                    <li><a href="#" data-rel="close">Video</a></li>
+                    <li data-role="list-divider">Team</li>
+                    <li><a href="#roster">Roster</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li data-role="list-divider">Season</li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#standings">Standings</a></li>
+                </ul>
+            </div><!-- /panel -->
+        </div><!-- /content -->
+        <div data-role="footer" data-position="fixed" class="main_bar">
+            <h4>Celtics</h4>
+        </div><!-- /footer -->
+    </div><!-- Video -->
+
     <!-- Roster -->
     <div data-role="page" id="roster">
         <div data-role="header" data-position="fixed" class="main_bar">
@@ -83,5 +142,6 @@
             <h4>Celtics</h4>
         </div><!-- /footer -->
     </div><!-- Roster -->
+
 </body>
 </html>
