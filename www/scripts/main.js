@@ -8,8 +8,8 @@
 
 function display_News(articles) {
         var div_content = "";
-        for (i = 0; i < articles.length; i++) {
-            if (i == 0) {
+        for (i = articles.length-1; i >= 0; i--) {//Display from newest to oldest
+            if (i == articles.length - 1) {
                 $("#news_container").html("");
             }
             div_content = "<div id='news" + articles[i]['id'] + "' class='news'><p class='news_title'>" + articles[i]['title'] +
