@@ -90,6 +90,7 @@ body{
 #back{
     background:none !important;
     border:none!important;
+    visibility: hidden;
 }
 .news{
     background-color:#f2f2f2;
@@ -115,3 +116,5 @@ body{
     width:150px;
     height:150px;
 }
+
+
