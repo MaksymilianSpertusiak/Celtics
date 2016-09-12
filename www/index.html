@@ -20,11 +20,6 @@
 	$( '.swipebox' ).swipebox();
 } )( jQuery );
     </script>
-    <script>
-	  $(function() {
-	    $.mobile.defaultHomeScroll = 0;
-	  });
-    </script>
 </head>
 <body>
     <!-- Opening -->
@@ -42,7 +37,7 @@
     <div data-role="page" id="news">
         <div data-role="header" data-position="fixed" class="main_bar" id="news_bar">
             <a href="#side_menu" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon" id="hamburger">Menu</a>
-            <a href="#" class="ui-btn ui-icon-back ui-btn-icon-right ui-btn-icon-notext ui-nodisc-icon" id="back" style="float:right;" onclick="get_news()">back</a>
+            <a href="#" class="ui-btn ui-icon-back ui-btn-icon-right ui-btn-icon-notext ui-nodisc-icon" id="back" style="float:right;" onclick="back_news()">back</a>
             <h1>News</h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
@@ -80,7 +75,7 @@
             <div data-role="panel" id="side_menu_photos" data-display="overlay" data-position="left">
                 <ul data-role="listview" data-icon="false">
                     <li data-role="list-divider">News</li>
-                    <li><a href="#news">Latest news</a></li>
+                    <li><a href="#news" onclick="get_news()">Latest news</a></li>
                     <li><a href="#" data-rel="close">Photos</a></li>
                     <li><a href="#video">Video</a></li>
                     <li data-role="list-divider">Team</li>

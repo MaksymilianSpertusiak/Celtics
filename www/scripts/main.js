@@ -24,6 +24,8 @@ function display_news(articles) {
             articles[i]['content'].substring(0, 200) + '...  <a href="#" onclick="read_news(' + articles[i]['id'] + ')">Read More</a></div>';
         $("#main_container").append(div_content);
     }
+    $(window).scrollTop(0);
+    $("#main_container").fadeIn(500);
 }
 
 function read_news(id) {
@@ -47,6 +49,13 @@ function load_news(content) {
     $("#main_container").fadeIn(500);
 }
 
+function back_news() {
+    $("#main_container").fadeOut(500);
+    setTimeout(function () {
+        get_news();
+    }, 510);
+}
+
 //PHOTOS FUNCTIONS
 
 function get_gallery() {
@@ -56,9 +65,11 @@ function get_gallery() {
 }
 
 function display_gallery(photos) {
+    //$("#photos_container").html("");
     for (i = 0; i < photos.length; i++) {
-        var content = '<a href="http://celtics.spertusiak.com.pl/gallery/' + photos[i]['big'] +
-            '" class="swipebox" title="My Caption"><img src="http://celtics.spertusiak.com.pl/gallery/' + photos[i]['small'] + '" alt="' + photos[i]['name'] + '"></a>'
+        var content = '<div class="photo_gallery"><a href="http://celtics.spertusiak.com.pl/gallery/' + photos[i]['big'] +
+            '" class="swipebox" title="My Caption"><img src="http://celtics.spertusiak.com.pl/gallery/' + photos[i]['small'] + '" alt="' +
+            photos[i]['name'] + '"></a>' + photos[i]['name'] + '</div>'
         $("#photos_container").append(content);
     }
 }
