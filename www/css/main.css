@@ -129,5 +129,10 @@ body{
     font-weight:700;
     color:#006d3e;
 }
+#main_container{
+    min-height: 100%;
+}
+.roster_item{
+}
 
 
