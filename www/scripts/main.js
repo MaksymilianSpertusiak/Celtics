@@ -41,12 +41,12 @@ function display_specific_news(id) {
     var div_content = "";
     var url = server_url + "index.php/Article/GetArticle/" + id;
     setTimeout(function () {
-    $.getJSON(url, function (data) {
-        div_content = '<div class="full_news_content">' + "<div class='mini-img'><img src='" + server_url + "news/" + data.articles['small_image_png'] +
-            "' height='150' width='150'/></div>" + data.articles['content'] +
-            '</div>';
-        load_news(div_content);
-    });
+        $.getJSON(url, function (data) {
+            div_content = '<div class="full_news_content">' + "<div class='mini-img'><img src='" + server_url + "news/" + data.articles['small_image_png'] +
+                "' height='150' width='150'/></div>" + data.articles['content'] +
+                '</div>';
+            load_news(div_content);
+        });
     }, 310);
 }
 function load_news(content) {
@@ -58,7 +58,7 @@ function load_news(content) {
 }
 
 function back_news() {
-        get_news_data();
+    get_news_data();
 }
 
 //PHOTOS FUNCTIONS
@@ -79,6 +79,8 @@ function display_gallery(photos) {
     }
 }
 
+ //ROSTER FUNCTIONS
+
 function get_roster_data() {
     $.getJSON(server_url + 'index.php/Roster/GetPlayers', function (data) {
         display_roster(data.players);
@@ -89,13 +91,50 @@ function display_roster(players) {
     $("#main_container").fadeOut(300);
     $("#main_container").fadeIn(300);
     setTimeout(function () {
-        $("#main_container").html("");
-        console.log(players);
+        $("#main_container").html("<div id='roster_container'><div>");
+        //console.log(players);
         for (i = 0; i < players.length; i++) {
             console.log(players[i].name);
-            var content = "<div class='roster_item'><img src='" + server_url + "roster/" + players[i].image +
-            "' height='95' width='130'/>" + players[i].name + "</div>";
-            $("#main_container").append(content);
+            var content = "<div class='roster_item' id='player" + players[i].id + "' onclick='get_player_data(" + players[i].id + ")'><img src='" + server_url + "roster/" + players[i].image +
+            "' height='95' width='130' style='float:left'/><div class='roster_number'>"
+            + players[i].number + '</div><div class="roster_name">' + players[i].name + "</div><div class='roster_position'>"
+            + players[i].position + "</div></div>";
+            $("#roster_container").append(content);
         }
     }, 310);
 }
+
+function get_player_data(id) {
+    $.getJSON(server_url + 'index.php/Roster/GetPlayer/' + id, function (data) {
+        display_player(data.player);
+    });
+}
+
+function display_player(player) {
+    $("#roster_container").fadeOut(300);
+    setTimeout(function () {
+        $("#back").unbind("click");
+        $("#back").click(function () {
+            back_roster();
+        });
+        $("#back").css('visibility', 'visible');       
+    }, 310);
+    $("#roster_container").fadeIn(300);
+    setTimeout(function () {
+        console.log(player);
+        $("#roster_container").html("<div class='roster_specific'><img src='" + server_url + "roster/" + player.image +
+            "' height='95' width='130'/></div><div class='roster_bar'>PERSONAL INFORMATION</div><div class='roster_personal_inf'><p>Name: " + player.name + "</p><p>Country: " +
+            player.country + "</p><p>Date of birth: " + player.date_of_birth + "</p><p>Height: " + player.height + " cm</p><p>Weight: " + player.weight + " kg</p><p>Number: " + 
+            player.number + "</p><p>Prior to NBA: " + player.prior_to_nba + "</p><p>Years pro: " + player.years_pro + "</p></div>"
+            + "<div class='roster_bar'>STATISTICS</div><div class='roster_statistics'>Statystyki gracza z obecnego sezonu</div><div class='roster_bar'>BIO</div><div class='bio'>" +
+            player.bio + "</div>");
+    }, 310);
+}
+
+function back_roster() {
+    $("#back").css('visibility', 'hidden'); //hide news back button
+    get_roster_data();
+    //console.log("TEst back");
+}
+
+  //SCHEDULE FUNCTIONS

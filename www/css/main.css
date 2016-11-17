@@ -116,6 +116,7 @@ body{
     width:150px;
     height:150px;
 }
+/*PHOTOS*/
 #photos_container{
     text-align:center;
 }
@@ -132,7 +133,67 @@ body{
 #main_container{
     min-height: 100%;
 }
-.roster_item{
+/*ROSTER*/
+#roster_container{
+    text-align:center;
+    height:100%;
+    width:100%;
+    display:inline-block;
 }
+.roster_item{
+    display: inline-block;
+    width:130px;
+    height:130px;
+    background-color:#f2f2f2;
+    border-radius: 5px;
+    margin-right:10px;
+    margin-bottom:5px;
+}
+.roster_number{
+    float:left;
+    font-size:170%;
+}
+.roster_name{
+    float:right;
+    font-weight:700;
+    /*font-size:150%;*/
+}
+.roster_position{
+    float:right;
+    font-size:80%;
+}
+.roster_specific{
+    width:100%;
+    float:left;
+    text-align:center;
+    margin-bottom:5px;
+}
+.bio{
+    float:left;
+    font-size:100%;
+    text-align:left;
+    background-color:#f2f2f2;
+}
+.roster_bar{
+    float:left;
+    width:100%;
+    height:20px;
+    line-height: 20px;
+    background-color:#016c38;
+    color:white;
+    text-align:center;
+    font-size:80%;
+}
+.roster_personal_inf{
+    float:left;
+    width:100%;
+    background-color:#f2f2f2;
+    text-align:left;
+    font-weight:600;
+}
+.roster_personal_inf > p { 
+    margin:0;
+}
+/*SCHEDULE*/
 
 
