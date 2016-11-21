@@ -137,4 +137,24 @@ function back_roster() {
     //console.log("TEst back");
 }
 
-  //SCHEDULE FUNCTIONS
+//SCHEDULE FUNCTIONS
+function get_schedule_data() {
+    $.getJSON(server_url + 'index.php/Schedule/GetSchedule', function (data) {
+        display_schedule(data.game);
+    });
+}
+
+function display_schedule(game) {
+    $("#main_container").fadeOut(300);
+    setTimeout(function () {
+        $("#main_container").html("<div id='schedule_container'><div>");
+        for (i = 0; i < game.length;i++){
+            $("#schedule_container").append("<div class='schedule_game'><div class='game_date'>" + game[i].date +
+                "</div><div class='schedule_team'>"
+                + "<img src='" + server_url + "assets/schedule/" + game[i].opponent_logo +
+            "' height='64' width='80'/>" + game[i].opponent + "</div><div class='schedule_arena'>Arena: " + game[i].arena + " </div></div>");
+        }
+    }, 310);
+    $("#main_container").fadeIn(300);
+    console.log(game);
+}
